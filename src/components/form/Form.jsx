@@ -11,9 +11,13 @@ function Form() {
   const [step, setStep] = useState(1);
   const [activeStep, setActiveStep] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = (type = 'Next') => {
+    console.log('type', type)
     setStep(step + 1);
     setActiveStep(activeStep + 1);
+    if (type === 'Submit') {
+      sendData();
+    }
   };
 
   const handlePrev = () => {
@@ -38,9 +42,11 @@ function Form() {
     setDataPage3(data);
   };
 
-  const handleDataPage4 = async (data) => {
+  const handleDataPage4 = (data) => {
     setDataPage4(data);
+  };
 
+  const sendData = async () => {
     const form_data = {
       userId: "",
       form1: dataPage1,
@@ -49,7 +55,6 @@ function Form() {
       form4: dataPage4,
     };
     console.log(form_data);
-    if(activeStep === 4){
       try {
         const response = await axios.post("/submission", form_data);
         if (response.status === 200) {
@@ -61,9 +66,7 @@ function Form() {
         // setMessage("Failed to submit form data. Please try again.");
         console.error("There was an error submitting the form data:", error);
       }
-    }
-   
-  };
+  }
 
   const renderStepContent = (step) => {
     switch (step) {
