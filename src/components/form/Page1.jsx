@@ -416,9 +416,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="Upto Rs. 25 lakhs"
                           onChange={() =>
-                            handleCheckboxChangeNetWorth("Upto Rs. 25 lakhs")
+                            handleCheckboxChangeNetWorth("a")
                           }
-                          checked={netWorth.includes("Upto Rs. 25 lakhs")}
+                          checked={netWorth.includes("a")}
                         />
                       </Col>{" "}
                       <Col md={6}>
@@ -427,10 +427,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                           label="Rs. 25 lakhs - 1 Crore"
                           onChange={() =>
                             handleCheckboxChangeNetWorth(
-                              "Rs. 25 lakhs - 1 Crore"
+                              "b"
                             )
                           }
-                          checked={netWorth.includes("Rs. 25 lakhs - 1 Crore")}
+                          checked={netWorth.includes("b")}
                         />
                       </Col>
                       <Col md={6}>
@@ -438,9 +438,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="1 Crore - 2.5 Crore"
                           onChange={() =>
-                            handleCheckboxChangeNetWorth("1 Crore - 2.5 Crore")
+                            handleCheckboxChangeNetWorth("c")
                           }
-                          checked={netWorth.includes("1 Crore - 2.5 Crore")}
+                          checked={netWorth.includes("c")}
                         />
                       </Col>
                       <Col md={6}>
@@ -448,9 +448,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="2.5 Crore and above"
                           onChange={() =>
-                            handleCheckboxChangeNetWorth("2.5 Crore and above")
+                            handleCheckboxChangeNetWorth("d")
                           }
-                          checked={netWorth.includes("2.5 Crore and above")}
+                          checked={netWorth.includes("d")}
                         />
                       </Col>
                     </Row>
@@ -469,11 +469,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                           label="Self-employed/Own business"
                           onChange={() =>
                             handleCheckboxChangeEmploymentStatus(
-                              "Self-employed/Own business"
+                              "a"
                             )
                           }
                           checked={employmentStatus.includes(
-                            "Self-employed/Own business"
+                            "a"
                           )}
                         />
                       </Col>
@@ -482,9 +482,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="Employee"
                           onChange={() =>
-                            handleCheckboxChangeEmploymentStatus("Employee")
+                            handleCheckboxChangeEmploymentStatus("b")
                           }
-                          checked={employmentStatus.includes("Employee")}
+                          checked={employmentStatus.includes("b")}
                         />
                       </Col>
                       <Col md={6}>
@@ -492,9 +492,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="Retired"
                           onChange={() =>
-                            handleCheckboxChangeEmploymentStatus("Retired")
+                            handleCheckboxChangeEmploymentStatus("c")
                           }
-                          checked={employmentStatus.includes("Retired")}
+                          checked={employmentStatus.includes("c")}
                         />
                       </Col>
                       <Col md={6}>
@@ -502,9 +502,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="Student"
                           onChange={() =>
-                            handleCheckboxChangeEmploymentStatus("Student")
+                            handleCheckboxChangeEmploymentStatus("d")
                           }
-                          checked={employmentStatus.includes("Student")}
+                          checked={employmentStatus.includes("d")}
                         />
                       </Col>
                       <Col md={6}>
@@ -512,9 +512,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="Homemaker"
                           onChange={() =>
-                            handleCheckboxChangeEmploymentStatus("Homemaker")
+                            handleCheckboxChangeEmploymentStatus("e")
                           }
-                          checked={employmentStatus.includes("Homemaker")}
+                          checked={employmentStatus.includes("e")}
                         />
                       </Col>
                       <Col md={3}>
@@ -522,9 +522,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                           type="checkbox"
                           label="Other(pls.specify)"
                           onChange={() =>
-                            handleCheckboxChangeOther("Other(pls.specify)")
+                            handleCheckboxChangeOther("f")
                           }
-                          checked={other.includes("Other(pls.specify)")}
+                          checked={other.includes("f")}
                         />
                       </Col>
                       <Col md={3}>
@@ -559,9 +559,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="Below 35 years"
                         onChange={() =>
-                          handleCheckboxChangeAge("Below 35 years")
+                          handleCheckboxChangeAge("a")
                         }
-                        checked={age.includes("Below 35 years")}
+                        checked={age.includes("a")}
                       />
                     </Col>{" "}
                     <Col md={3}>
@@ -570,10 +570,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Between 35 years and 45 years"
                         onChange={() =>
                           handleCheckboxChangeAge(
-                            "Between 35 years and 45 years"
+                            "b"
                           )
                         }
-                        checked={age.includes("Between 35 years and 45 years")}
+                        checked={age.includes("b")}
                       />
                     </Col>
                     <Col md={3}>
@@ -582,10 +582,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Between 45 years and 55 years"
                         onChange={() =>
                           handleCheckboxChangeAge(
-                            "Between 45 years and 55 years"
+                            "c"
                           )
                         }
-                        checked={age.includes("Between 45 years and 55 years")}
+                        checked={age.includes("c")}
                       />
                     </Col>
                     <Col md={3}>
@@ -594,10 +594,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Between 55 years and 65 years"
                         onChange={() =>
                           handleCheckboxChangeAge(
-                            "Between 55 years and 65 years"
+                            "d"
                           )
                         }
-                        checked={age.includes("Between 55 years and 65 years")}
+                        checked={age.includes("d")}
                       />
                     </Col>
                     <Col>
@@ -605,9 +605,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="Above 65 years"
                         onChange={() =>
-                          handleCheckboxChangeAge("Above 65 years")
+                          handleCheckboxChangeAge("e")
                         }
-                        checked={age.includes("Above 65 years")}
+                        checked={age.includes("e")}
                       />
                     </Col>
                   </Row>
@@ -627,11 +627,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Less than 3 years"
                         onChange={() =>
                           handleCheckboxChangetimeHorizonForFinancialPlan(
-                            "Less than 3 years"
+                            "a"
                           )
                         }
                         checked={timeHorizonForFinancialPlan.includes(
-                          "Less than 3 years"
+                          "a"
                         )}
                       />
                     </Col>{" "}
@@ -641,11 +641,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Between 3 years to 10 years"
                         onChange={() =>
                           handleCheckboxChangetimeHorizonForFinancialPlan(
-                            "Between 3 years to 10 years"
+                            "b"
                           )
                         }
                         checked={timeHorizonForFinancialPlan.includes(
-                          "Between 3 years to 10 years"
+                          "b"
                         )}
                       />
                     </Col>
@@ -655,11 +655,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="10 years and Above"
                         onChange={() =>
                           handleCheckboxChangetimeHorizonForFinancialPlan(
-                            "10 years and Above"
+                            "c"
                           )
                         }
                         checked={timeHorizonForFinancialPlan.includes(
-                          "10 years and Above"
+                          "c"
                         )}
                       />
                     </Col>
@@ -679,9 +679,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="Less than 25%"
                         onChange={() =>
-                          handleCheckboxChangeLiquidNetWorth("Less than 25%")
+                          handleCheckboxChangeLiquidNetWorth("a")
                         }
-                        checked={liquidNetWorth.includes("Less than 25%")}
+                        checked={liquidNetWorth.includes("a")}
                       />
                     </Col>{" "}
                     <Col md={3}>
@@ -690,10 +690,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Between 25% and 50%"
                         onChange={() =>
                           handleCheckboxChangeLiquidNetWorth(
-                            "Between 25% and 50%"
+                            "b"
                           )
                         }
-                        checked={liquidNetWorth.includes("Between 25% and 50%")}
+                        checked={liquidNetWorth.includes("b")}
                       />
                     </Col>
                     <Col md={3}>
@@ -701,9 +701,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="More than 50%"
                         onChange={() =>
-                          handleCheckboxChangeLiquidNetWorth("More than 50%")
+                          handleCheckboxChangeLiquidNetWorth("c")
                         }
-                        checked={liquidNetWorth.includes("More than 50%")}
+                        checked={liquidNetWorth.includes("c")}
                       />
                     </Col>
                     <Col md={3}>
@@ -711,9 +711,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="100%"
                         onChange={() =>
-                          handleCheckboxChangeLiquidNetWorth("100%")
+                          handleCheckboxChangeLiquidNetWorth("d")
                         }
-                        checked={liquidNetWorth.includes("100%")}
+                        checked={liquidNetWorth.includes("d")}
                       />
                     </Col>
                   </Row>
@@ -734,11 +734,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="Not at all. I do not require funds from the portfolio during the stated period."
                         onChange={() =>
                           handleCheckboxChangeTimeHorizonForPortfolio(
-                            "Not at all. I do not require funds from the portfolio during the stated period."
+                            "a"
                           )
                         }
                         checked={timeHorizonForPortfolio.includes(
-                          "Not at all. I do not require funds from the portfolio during the stated period."
+                          "a"
                         )}
                       />
                     </Col>{" "}
@@ -750,11 +750,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="I will require 25% of the invested capital, during the stated period."
                         onChange={() =>
                           handleCheckboxChangeTimeHorizonForPortfolio(
-                            "I will require 25% of the invested capital, during the stated period."
+                            "b"
                           )
                         }
                         checked={timeHorizonForPortfolio.includes(
-                          "I will require 25% of the invested capital, during the stated period."
+                          "b"
                         )}
                       />
                     </Col>
@@ -766,11 +766,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="I will require 50% of the invested capital, during the stated period."
                         onChange={() =>
                           handleCheckboxChangeTimeHorizonForPortfolio(
-                            "I will require 50% of the invested capital, during the stated period."
+                            "c"
                           )
                         }
                         checked={timeHorizonForPortfolio.includes(
-                          "I will require 50% of the invested capital, during the stated period."
+                          "c"
                         )}
                       />
                     </Col>
@@ -782,11 +782,11 @@ function Page1({ handleNext, handleData, page1Data }) {
                         label="I will require 100% of the invested capital, during the stated period."
                         onChange={() =>
                           handleCheckboxChangeTimeHorizonForPortfolio(
-                            "I will require 100% of the invested capital, during the stated period."
+                            "d"
                           )
                         }
                         checked={timeHorizonForPortfolio.includes(
-                          "I will require 100% of the invested capital, during the stated period."
+                          "d"
                         )}
                       />
                     </Col>
@@ -805,9 +805,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="Immediately"
                         onChange={() =>
-                          handleRequiredOutflowBegin("Immediately")
+                          handleRequiredOutflowBegin("a")
                         }
-                        checked={requiredOutflowBegin.includes("Immediately")}
+                        checked={requiredOutflowBegin.includes("a")}
                       />
                     </Col>{" "}
                     <Col md={3}>
@@ -815,10 +815,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="Between 1st & 3rd Year"
                         onChange={() =>
-                          handleRequiredOutflowBegin("Between 1st & 3rd Year")
+                          handleRequiredOutflowBegin("b")
                         }
                         checked={requiredOutflowBegin.includes(
-                          "Between 1st & 3rd Year"
+                          "b"
                         )}
                       />
                     </Col>
@@ -827,10 +827,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="Between 3rd & 5th Year"
                         onChange={() =>
-                          handleRequiredOutflowBegin("Between 3rd & 5th Year")
+                          handleRequiredOutflowBegin("c")
                         }
                         checked={requiredOutflowBegin.includes(
-                          "Between 3rd & 5th Year"
+                          "c"
                         )}
                       />
                     </Col>
@@ -839,10 +839,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="After 5th Year"
                         onChange={() =>
-                          handleRequiredOutflowBegin("After 5th Year")
+                          handleRequiredOutflowBegin("d")
                         }
                         checked={requiredOutflowBegin.includes(
-                          "After 5th Year"
+                          "d"
                         )}
                       />
                     </Col>
@@ -850,8 +850,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                       <Form.Check
                         type="checkbox"
                         label="None"
-                        onChange={() => handleRequiredOutflowBegin("None")}
-                        checked={requiredOutflowBegin.includes("None")}
+                        onChange={() => handleRequiredOutflowBegin("e")}
+                        checked={requiredOutflowBegin.includes("e")}
                       />
                     </Col>
                   </Row>
@@ -871,9 +871,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <FormCheck.Input
                           type="checkbox"
                           onChange={() =>
-                            handleInvestmentObjectives("Defensive")
+                            handleInvestmentObjectives("a")
                           }
-                          checked={investmentObjectives.includes("Defensive")}
+                          checked={investmentObjectives.includes("a")}
                         />
                         <FormCheck.Label>
                           <span className="fw-bold">Defensive</span>: My primary
@@ -894,10 +894,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <FormCheck.Input
                           type="checkbox"
                           onChange={() =>
-                            handleInvestmentObjectives("Income oriented")
+                            handleInvestmentObjectives("b")
                           }
                           checked={investmentObjectives.includes(
-                            "Income oriented"
+                            "b"
                           )}
                         />
                         <FormCheck.Label>
@@ -921,10 +921,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <FormCheck.Input
                           type="checkbox"
                           onChange={() =>
-                            handleInvestmentObjectives("Growth and income")
+                            handleInvestmentObjectives("c")
                           }
                           checked={investmentObjectives.includes(
-                            "Growth and income"
+                            "c"
                           )}
                         />
                         <FormCheck.Label>
@@ -947,10 +947,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <FormCheck.Input
                           type="checkbox"
                           onChange={() =>
-                            handleInvestmentObjectives("Growth oriented")
+                            handleInvestmentObjectives("d")
                           }
                           checked={investmentObjectives.includes(
-                            "Growth oriented"
+                            "d"
                           )}
                         />
                         <FormCheck.Label>
@@ -973,8 +973,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                       <Form.Check>
                         <FormCheck.Input
                           type="checkbox"
-                          onChange={() => handleInvestmentObjectives("Growth")}
-                          checked={investmentObjectives.includes("Growth")}
+                          onChange={() => handleInvestmentObjectives("e")}
+                          checked={investmentObjectives.includes("e")}
                         />
                         <FormCheck.Label>
                           <span className="fw-bold">Growth</span>: I seek only
@@ -996,10 +996,10 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <FormCheck.Input
                           type="checkbox"
                           onChange={() =>
-                            handleInvestmentObjectives("Specialist investing")
+                            handleInvestmentObjectives("f")
                           }
                           checked={investmentObjectives.includes(
-                            "Specialist investing"
+                            "f"
                           )}
                         />
                         <FormCheck.Label>
@@ -1034,8 +1034,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="My preference is for investments with no or negligible price movements, and with the ability to sell my  investments at short notice  
                       i.e. within one week or a maximum period of one year"
-                        onChange={() => handleAbilityTotolarateRisk("1")}
-                        checked={abilityTotolarateRisk.includes("1")}
+                        onChange={() => handleAbilityTotolarateRisk("a")}
+                        checked={abilityTotolarateRisk.includes("a")}
                       />
                     </Col>{" "}
                   </Row>
@@ -1045,8 +1045,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                         type="checkbox"
                         label="I can tolerate limited negative price movements on my investments and prefer investments that I can sell at  short notice  
                       i.e within one week or for a price that is certain and close to the recent market average"
-                        onChange={() => handleAbilityTotolarateRisk("2")}
-                        checked={abilityTotolarateRisk.includes("2")}
+                        onChange={() => handleAbilityTotolarateRisk("b")}
+                        checked={abilityTotolarateRisk.includes("b")}
                       />
                     </Col>
                   </Row>
@@ -1055,8 +1055,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                       <Form.Check
                         type="checkbox"
                         label="I can tolerate negative price movements on my total investments and prefer debt investments that I can sell for a  price that is certain and close to the recent market average, and equity investments that may suffer substantial  negative price movement, having a risk of losing their entire value, may be difficult to sell or have an uncertain  price at any given time, or do not allow me to sell my investment over an extended period."
-                        onChange={() => handleAbilityTotolarateRisk("3")}
-                        checked={abilityTotolarateRisk.includes("3")}
+                        onChange={() => handleAbilityTotolarateRisk("c")}
+                        checked={abilityTotolarateRisk.includes("c")}
                       />
                     </Col>
                   </Row>
@@ -1065,8 +1065,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                       <Form.Check
                         type="checkbox"
                         label="I can tolerate investments that may suffer substantial negative price movements having a small risk of losing  their entire value, may be difficult to sell or have an uncertain price at any given time, such that I may only be  able to sell at a price below the recent market average."
-                        onChange={() => handleAbilityTotolarateRisk("4")}
-                        checked={abilityTotolarateRisk.includes("4")}
+                        onChange={() => handleAbilityTotolarateRisk("d")}
+                        checked={abilityTotolarateRisk.includes("d")}
                       />
                     </Col>
                   </Row>
@@ -1075,8 +1075,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                       <Form.Check
                         type="checkbox"
                         label="I can tolerate investments or financial contracts that may suffer substantial negative price movements, have a  significant risk of losing their entire value, that may be difficult to sell or have an uncertain value at any given  time, or do not allow me to sell my investment over an extended period."
-                        onChange={() => handleAbilityTotolarateRisk("5")}
-                        checked={abilityTotolarateRisk.includes("5")}
+                        onChange={() => handleAbilityTotolarateRisk("e")}
+                        checked={abilityTotolarateRisk.includes("e")}
                       />
                     </Col>
                   </Row>
@@ -1085,8 +1085,8 @@ function Page1({ handleNext, handleData, page1Data }) {
                       <Form.Check
                         type="checkbox"
                         label="I can tolerate investments or financial contracts that may have a high risk of losing their entire value or may even  lose more than my initial investment, that may be very difficult to sell or have a highly uncertain value at any given  time, or do not allow me to sell my investment over an extended period."
-                        onChange={() => handleAbilityTotolarateRisk("6")}
-                        checked={abilityTotolarateRisk.includes("6")}
+                        onChange={() => handleAbilityTotolarateRisk("f")}
+                        checked={abilityTotolarateRisk.includes("f")}
                       />
                     </Col>
                   </Row>
@@ -1226,9 +1226,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <FormCheck.Input
                           type="radio"
                           onChange={() => {
-                            handleInvestmentExperience("Limited");
+                            handleInvestmentExperience("a");
                           }}
-                          checked={investmentExperience === "Limited"}
+                          checked={investmentExperience === "a"}
                         />
                         <FormCheck.Label>
                           <span className="fw-bold">Limited -</span> I have
@@ -1246,15 +1246,15 @@ function Page1({ handleNext, handleData, page1Data }) {
                         name="group1"
                         type="radio"
                         value="Moderate" // Store the selected option value
-                        onChange={handleInvestmentExperience}
-                        checked={investmentExperience === "Moderate"} // Set checked state based on selectedOption
+                        // onChange={handleInvestmentExperience}
+                        checked={investmentExperience === "b"} // Set checked state based on selectedOption
                       >
                         <FormCheck.Input
                           type="radio"
                           onChange={() => {
-                            handleInvestmentExperience("Moderate");
+                            handleInvestmentExperience("b");
                           }}
-                          checked={investmentExperience === "Moderate"}
+                          checked={investmentExperience === "b"}
                         />
                         <FormCheck.Label>
                           <span className="fw-bold">Moderate -</span> I have
@@ -1272,15 +1272,15 @@ function Page1({ handleNext, handleData, page1Data }) {
                         name="group1"
                         type="radio"
                         value="Extensive" // Store the selected option value
-                        onChange={handleInvestmentExperience}
-                        checked={investmentExperience === "Extensive"} // Set checked state based on selectedOption
+                        // onChange={handleInvestmentExperience}
+                        checked={investmentExperience === "c"} // Set checked state based on selectedOption
                       >
                         <FormCheck.Input
                           type="radio"
                           onChange={() => {
-                            handleInvestmentExperience("Extensive");
+                            handleInvestmentExperience("c");
                           }}
-                          checked={investmentExperience === "Extensive"}
+                          checked={investmentExperience === "c"}
                         />
                         <FormCheck.Label>
                           <span className="fw-bold">Extensive -</span> I have
