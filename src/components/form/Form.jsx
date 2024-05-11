@@ -6,13 +6,15 @@ import Page1 from "./Page1";
 import Page2 from "./Page2";
 import Page3 from "./Page3";
 import Page4 from "./Page4";
+import PreviewForm from "../preview/PreviewForm";
 
 function Form() {
   const [step, setStep] = useState(1);
   const [activeStep, setActiveStep] = useState(0);
 
+  const [previewStatus, setPreviewStatus] = useState(false);
+
   const handleNext = (type = 'Next') => {
-    console.log('type', type)
     setStep(step + 1);
     setActiveStep(activeStep + 1);
     if (type === 'Submit') {
@@ -45,6 +47,13 @@ function Form() {
   const handleDataPage4 = (data) => {
     setDataPage4(data);
   };
+
+  const showPreviewModal = () => {
+    setPreviewStatus(true)
+  }
+  const hidePreviewModal = () => {
+    setPreviewStatus(false)
+  }
 
   const sendData = async () => {
     const form_data = {
@@ -112,6 +121,7 @@ function Form() {
               handleBack={handlePrev}
               handleData={handleDataPage4}
               page4Data={dataPage4}
+              showPreview={showPreviewModal}
             />
           </>
         );
@@ -130,6 +140,9 @@ function Form() {
           }}
           className={step === 4 ? "background-image-calculate" : ""}
         >
+          {previewStatus && <PreviewForm showPreview={previewStatus} hidePreview={hidePreviewModal}
+            dataPage1={dataPage1} dataPage2={dataPage2} dataPage3={dataPage3} dataPage4={dataPage4}
+          />}
           <Stepper
             steps={[
               { label: "KYC Form" },
