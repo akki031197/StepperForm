@@ -39,6 +39,15 @@ function Form() {
 
   const handleDataPage4 = (data) => {
     setDataPage4(data);
+
+    const form_data = {
+      userId: '',
+      form1: dataPage1,
+      form2: dataPage2,
+      form3: dataPage3,
+      form4: dataPage4
+    }
+    console.log(form_data)
   };
 
   const renderStepContent = (step) => {
