@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Stepper } from "react-form-stepper";
 import Page1 from "./Page1";
+import Page2 from "./Page2";
 
 function Form() {
   const [step, setStep] = useState(1);
   const [activeStep, setActiveStep] = useState(0);
+
   const handleNext = () => {
     setStep(step + 1);
     setActiveStep(activeStep + 1);
@@ -16,18 +18,25 @@ function Form() {
     setActiveStep(activeStep - 1);
   };
 
+  const [dataPage1, setDataPage1] = useState({})
+
+  const handleDataPage1 = (data) => {
+    setDataPage1(data)
+    console.log('data', data)
+  }
+
   const renderStepContent = (step) => {
     switch (step) {
       case 1:
         return (
           <>
-            <Page1 handleNext={handleNext} handleBack={handlePrev} />
+            <Page1 handleNext={handleNext} handleBack={handlePrev} handleData={handleDataPage1} page1Data={dataPage1} />
           </>
         );
       case 2:
         return (
           <>
-            <Page1 handleNext={handleNext} handleBack={handlePrev} />
+            <Page2 handleNext={handleNext} handleBack={handlePrev} />
           </>
         );
       case 3:

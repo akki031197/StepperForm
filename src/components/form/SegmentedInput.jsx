@@ -34,7 +34,7 @@ export const SegmentedInput = ({ inputValue, segments, onChange }) => {
           type="text"
           value={value}
           maxLength="1"
-          className="form-control"
+          className="form-control shadow-none"
           ref={(el) => (inputRefs.current[index] = el)}
           onChange={(e) => handleChange(index, e)}
         />

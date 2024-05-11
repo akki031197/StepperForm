@@ -13,9 +13,6 @@
   padding: 1; /* Remove any default padding */
   border-radius: 0; /* Ensure there are no border-radius styles creating gaps */
 }
-.segmented-input{
-  gap: 10px;
-}
 
 .thead-dark{
   background-color: black !important;
