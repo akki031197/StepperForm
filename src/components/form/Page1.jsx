@@ -35,6 +35,8 @@ function Page1({ handleNext, handleData, page1Data }) {
 
   const [employmentStatus, setEmploymentStatus] = useState(page1Data.employmentStatus || []);
   const [netWorth, setNetWorth] = useState(page1Data.netWorth || []);
+  const [other, setOther] = useState(page1Data.other || []);
+  const [otherCity, setOtherCity] = useState(page1Data.otherCity || '')
 
   const [age, setAge] = useState(page1Data.age || []);
   const [timeHorizonForFinancialPlan, settimeHorizonForFinancialPlan] = useState(page1Data.timeHorizonForFinancialPlan || []);
@@ -57,6 +59,8 @@ function Page1({ handleNext, handleData, page1Data }) {
       accountNumber: accountNumber,
       selectedNamePrefix: selectedNamePrefix,
       employmentStatus: employmentStatus,
+      other: other,
+      otherCity: otherCity,
       netWorth: netWorth,
       age: age,
       timeHorizonForFinancialPlan: timeHorizonForFinancialPlan,
@@ -69,7 +73,7 @@ function Page1({ handleNext, handleData, page1Data }) {
     }
     setPage1DataToSend(accordian_data)
   }, [firstName, middleName, lastName, nationality, dob, city, selectedNamePrefix, accountNumber, employmentStatus, netWorth, investmentExperience,
-    age, timeHorizonForFinancialPlan, liquidNetWorth, timeHorizonForPortfolio, requiredOutflowBegin, investmentObjectives, abilityTotolarateRisk
+    age, timeHorizonForFinancialPlan, liquidNetWorth, timeHorizonForPortfolio, requiredOutflowBegin, investmentObjectives, abilityTotolarateRisk, other, otherCity
   ]);
 
   const handleSelectChangeNamePrefix = (event) => { setSelectedNamePrefix(event.target.value) }
@@ -80,6 +84,7 @@ function Page1({ handleNext, handleData, page1Data }) {
   const handleChangeCity = (event) => { setCity(event.target.value) }
   const handleChangeDateOfBirth = (date) => { setDob(date) };
   const handleAccountNumberChange = (accountNumber) => { setAccountNumber(accountNumber) };
+  const handleChangeotherCity = (event) => { setOtherCity(event.target.value) };
 
   const handleCheckboxChangeEmploymentStatus = (label) => {
     if (employmentStatus.includes(label)) {
@@ -93,6 +98,13 @@ function Page1({ handleNext, handleData, page1Data }) {
       setNetWorth(netWorth.filter(item => item !== label));
     } else {
       setNetWorth([...netWorth, label]);
+    }
+  };
+  const handleCheckboxChangeOther = (label) => {
+    if (other.includes(label)) {
+      setOther(other.filter(item => item !== label));
+    } else {
+      setOther([...other, label]);
     }
   };
 
@@ -402,14 +414,16 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <Form.Check
                           type="checkbox"
                           label="Other(pls.specify)"
-                          onChange={() => handleCheckboxChange("Other(pls.specify)")}
-                          checked={employmentStatus.includes("Other(pls.specify)")}
+                          onChange={() => handleCheckboxChangeOther("Other(pls.specify)")}
+                          checked={other.includes("Other(pls.specify)")}
                         />
                       </Col>
                       <Col md={3}>
                         <Form.Control
                           type="text"
                           placeholder="Enter your city"
+                          value={otherCity}
+                          onChange={handleChangeotherCity}
                         />
                       </Col>
                     </Row>
