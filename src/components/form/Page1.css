@@ -1,0 +1,15 @@
+/* your-styles.css */
+
+.segmented-input {
+  display: flex;
+  gap: 0; /* No gap between segments */
+}
+
+.segmented-input .form-control {
+  text-align: center;
+  width: 3rem; /* Adjust the width as needed */
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  border-radius: 0; /* Ensure there are no border-radius styles creating gaps */
+}
