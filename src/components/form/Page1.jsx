@@ -861,17 +861,17 @@ function Page1(handleNext) {
                         <Col>For Corporates</Col>
                       </Row>
                     </th>
-                    <th colSpan="2" className="thead-dark">
+                    <th rowSpan="2" className="thead-dark text-center align-middle">
                       <Row className="text-center">
-                        <Col>Your Category</Col>
+                        <Col >Your Category</Col>
                       </Row>
                     </th>
                   </tr>
                   <tr>
-                    <th className="thead-dark">Score Range</th>
-                    <th className="thead-dark">Discription</th>
-                    <th className="thead-dark">Score Range</th>
-                    <th className="thead-dark">Description</th>
+                    <th className="thead-dark text-center">Score Range</th>
+                    <th className="thead-dark text-center">Discription</th>
+                    <th className="thead-dark text-center">Score Range</th>
+                    <th className="thead-dark text-center">Description</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -881,6 +881,7 @@ function Page1(handleNext) {
                       <td>{item.Descriptions}</td>
                       <td>{item.value2}</td>
                       <td>{item.Descriptions}</td>
+                      <td></td>
                     </tr>
                   ))}
                 </tbody>
