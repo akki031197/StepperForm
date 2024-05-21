@@ -19,28 +19,62 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./Page1.css";
 import { SegmentedInput } from "./SegmentedInput";
 
-function Page1(handleNext) {
+function Page1({ handleNext, handleData, page1Data }) {
 
-  //accordian-0 
-  const [dob, setDob] = useState(localStorage.getItem('dateOfBirth') || '');
-  const [firstName, setFirstName] = useState(localStorage.getItem('firstName') || '')
-  const [middleName, setMiddleName] = useState(localStorage.getItem('middleName') || '')
-  const [lastName, setLastName] = useState(localStorage.getItem('lastName') || '')
-  const [nationality, setNationality] = useState(localStorage.getItem('nationality') || '')
-  const [city, setCity] = useState(localStorage.getItem('city') || '')
-  const [accountNumber, setAccountNumber] = useState(localStorage.getItem('accountNumber') || '')
-  const [selectedNamePrefix, setSelectedNamePrefix] = useState(localStorage.getItem('selectedNamePrefix') || '')
+  const [page1DataToSend, setPage1DataToSend] = useState(page1Data)
+
+  const handleChangeButton = () => {
+    handleNext()
+    handleData(page1DataToSend)
+  };
+
+  const [dob, setDob] = useState(page1Data.dob || '');
+  const [firstName, setFirstName] = useState(page1Data.firstName || '')
+  const [middleName, setMiddleName] = useState(page1Data.middleName || '')
+  const [lastName, setLastName] = useState(page1Data.lastName || '')
+  const [nationality, setNationality] = useState(page1Data.nationality || '')
+  const [city, setCity] = useState(page1Data.city || '')
+  const [accountNumber, setAccountNumber] = useState(page1Data.accountNumber || '')
+  const [selectedNamePrefix, setSelectedNamePrefix] = useState(page1Data.selectedNamePrefix || '')
+
+  const [employmentStatus, setEmploymentStatus] = useState(page1Data.employmentStatus || []);
+  const [netWorth, setNetWorth] = useState(page1Data.netWorth || []);
+
+  const [age, setAge] = useState(page1Data.age || []);
+  const [timeHorizonForFinancialPlan, settimeHorizonForFinancialPlan] = useState(page1Data.timeHorizonForFinancialPlan || []);
+  const [liquidNetWorth, setLiquidNetWorth] = useState(page1Data.liquidNetWorth || []);
+  const [timeHorizonForPortfolio, setTimeHorizonForPortfolio] = useState(page1Data.timeHorizonForPortfolio || []);
+  const [requiredOutflowBegin, setRequiredOutflowBegin] = useState(page1Data.requiredOutflowBegin || []);
+  const [investmentObjectives, setInvestmentObjectives] = useState(page1Data.investmentObjectives || []);
+  const [abilityTotolarateRisk, setAbilityTotolarateRisk] = useState(page1Data.abilityTotolarateRisk || []);
+
+  const [investmentExperience, setInvestmentExperience] = useState(page1Data.investmentExperience || "");
 
   useEffect(() => {
-    localStorage.setItem("firstName", firstName);
-    localStorage.setItem("middleName", middleName);
-    localStorage.setItem("lastName", lastName);
-    localStorage.setItem("nationality", nationality);
-    localStorage.setItem('dateOfBirth', dob);
-    localStorage.setItem('city', city);
-    localStorage.setItem('selectedNamePrefix', selectedNamePrefix)
-    localStorage.setItem('accountNumber', accountNumber)
-  }, [firstName, middleName, lastName, nationality, dob, city, selectedNamePrefix, accountNumber]);
+    const accordian_data = {
+      dob: dob,
+      firstName: firstName,
+      middleName: middleName,
+      lastName: lastName,
+      nationality: nationality,
+      city: city,
+      accountNumber: accountNumber,
+      selectedNamePrefix: selectedNamePrefix,
+      employmentStatus: employmentStatus,
+      netWorth: netWorth,
+      age: age,
+      timeHorizonForFinancialPlan: timeHorizonForFinancialPlan,
+      liquidNetWorth: liquidNetWorth,
+      timeHorizonForPortfolio: timeHorizonForPortfolio,
+      requiredOutflowBegin: requiredOutflowBegin,
+      investmentObjectives: investmentObjectives,
+      abilityTotolarateRisk: abilityTotolarateRisk,
+      investmentExperience: investmentExperience
+    }
+    setPage1DataToSend(accordian_data)
+  }, [firstName, middleName, lastName, nationality, dob, city, selectedNamePrefix, accountNumber, employmentStatus, netWorth, investmentExperience,
+    age, timeHorizonForFinancialPlan, liquidNetWorth, timeHorizonForPortfolio, requiredOutflowBegin, investmentObjectives, abilityTotolarateRisk
+  ]);
 
   const handleSelectChangeNamePrefix = (event) => { setSelectedNamePrefix(event.target.value) }
   const handleChangeFirstName = (event) => { setFirstName(event.target.value) };
@@ -49,17 +83,7 @@ function Page1(handleNext) {
   const handleChangeNationality = (event) => { setNationality(event.target.value) }
   const handleChangeCity = (event) => { setCity(event.target.value) }
   const handleChangeDateOfBirth = (date) => { setDob(date) };
-  const handleChangeButton = () => { handleNext() };
   const handleAccountNumberChange = (accountNumber) => { setAccountNumber(accountNumber) };
-
-  //accordian-1
-  const [employmentStatus, setEmploymentStatus] = useState(JSON.parse(localStorage.getItem('employmentStatus')) || []);
-  const [netWorth, setNetWorth] = useState(JSON.parse(localStorage.getItem('netWorth')) || []);
-
-  useEffect(() => {
-    localStorage.setItem('employmentStatus', JSON.stringify(employmentStatus));
-    localStorage.setItem('netWorth', JSON.stringify(netWorth));
-  }, [employmentStatus, netWorth]);
 
   const handleCheckboxChangeEmploymentStatus = (label) => {
     if (employmentStatus.includes(label)) {
@@ -75,25 +99,6 @@ function Page1(handleNext) {
       setNetWorth([...netWorth, label]);
     }
   };
-
-  //accordian-2
-  const [age, setAge] = useState(JSON.parse(localStorage.getItem('age')) || []);
-  const [timeHorizonForFinancialPlan, settimeHorizonForFinancialPlan] = useState(JSON.parse(localStorage.getItem('timeHorizonForFinancialPlan')) || []);
-  const [liquidNetWorth, setLiquidNetWorth] = useState(JSON.parse(localStorage.getItem('liquidNetWorth')) || []);
-  const [timeHorizonForPortfolio, setTimeHorizonForPortfolio] = useState(JSON.parse(localStorage.getItem('timeHorizonForPortfolio')) || []);
-  const [requiredOutflowBegin, setRequiredOutflowBegin] = useState(JSON.parse(localStorage.getItem('requiredOutflowBegin')) || []);
-  const [investmentObjectives, setInvestmentObjectives] = useState(JSON.parse(localStorage.getItem('investmentObjectives')) || []);
-  const [abilityTotolarateRisk, setAbilityTotolarateRisk] = useState(JSON.parse(localStorage.getItem('abilityTotolarateRisk')) || []);
-
-  useEffect(() => {
-    localStorage.setItem('age', JSON.stringify(age));
-    localStorage.setItem('timeHorizonForFinancialPlan', JSON.stringify(timeHorizonForFinancialPlan));
-    localStorage.setItem('liquidNetWorth', JSON.stringify(liquidNetWorth));
-    localStorage.setItem('timeHorizonForPortfolio', JSON.stringify(timeHorizonForPortfolio));
-    localStorage.setItem('requiredOutflowBegin', JSON.stringify(requiredOutflowBegin));
-    localStorage.setItem('investmentObjectives', JSON.stringify(investmentObjectives));
-    localStorage.setItem('abilityTotolarateRisk', JSON.stringify(abilityTotolarateRisk));
-  }, [age, timeHorizonForFinancialPlan, liquidNetWorth, timeHorizonForPortfolio, requiredOutflowBegin, investmentObjectives, abilityTotolarateRisk]);
 
   const handleCheckboxChangeAge = (label) => {
     if (age.includes(label)) {
@@ -145,15 +150,7 @@ function Page1(handleNext) {
     }
   };
 
-  //accordian-3
-  const [investmentExperience, setInvestmentExperience] = useState(JSON.parse(localStorage.getItem('investmentExperience')) || "");
-
-  useEffect(() => {
-    localStorage.setItem('investmentExperience', JSON.stringify(investmentExperience));
-  }, [investmentExperience]);
-
   const handleInvestmentExperience = (type) => {
-    console.log(type)
     setInvestmentExperience(type);
   };
 
@@ -976,8 +973,7 @@ function Page1(handleNext) {
       </Accordion>
       <div className="text-center mt-4">
         <Button
-          className="rounded-pill"
-          variant="primary"
+          variant="dark"
           onClick={handleChangeButton}
         >
           Continue
