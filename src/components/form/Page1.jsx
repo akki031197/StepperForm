@@ -21,8 +21,8 @@ import { SegmentedInput } from "./SegmentedInput";
 
 function Page1(handleNext) {
 
-  //accordian-0
-  const [dob, setDob] = useState(localStorage.getItem('dob') || '');
+  //accordian-0 
+  const [dob, setDob] = useState(localStorage.getItem('dateOfBirth') || '');
   const [firstName, setFirstName] = useState(localStorage.getItem('firstName') || '')
   const [middleName, setMiddleName] = useState(localStorage.getItem('middleName') || '')
   const [lastName, setLastName] = useState(localStorage.getItem('lastName') || '')
@@ -40,7 +40,7 @@ function Page1(handleNext) {
     localStorage.setItem('city', city);
     localStorage.setItem('selectedNamePrefix', selectedNamePrefix)
     localStorage.setItem('accountNumber', accountNumber)
-  }, [firstName, middleName, lastName, nationality, dob, city, selectedNamePrefix, dob, accountNumber]);
+  }, [firstName, middleName, lastName, nationality, dob, city, selectedNamePrefix, accountNumber]);
 
   const handleSelectChangeNamePrefix = (event) => { setSelectedNamePrefix(event.target.value) }
   const handleChangeFirstName = (event) => { setFirstName(event.target.value) };
@@ -312,7 +312,7 @@ function Page1(handleNext) {
                     </Form.Label>
 
                     <SegmentedInput
-                      value={accountNumber} 
+                      inputValue={accountNumber}
                       segments={7}
                       onChange={handleAccountNumberChange}
                     />

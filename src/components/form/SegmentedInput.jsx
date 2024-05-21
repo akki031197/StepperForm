@@ -1,9 +1,18 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Form } from "react-bootstrap";
-// eslint-disable-next-line react/prop-types
-export const SegmentedInput = ({ segments, onChange }) => {
-  const [values, setValues] = useState(Array(segments).fill(""));
+
+export const SegmentedInput = ({ inputValue, segments, onChange }) => {
+  const [values, setValues] = useState(
+    inputValue.toString().split("").slice(0, segments).concat(Array(segments - inputValue.toString().length).fill(""))
+  );
   const inputRefs = useRef([]);
+
+  useEffect(() => {
+    // When the input value changes from outside, update the segmented input
+    setValues(
+      inputValue.toString().split("").slice(0, segments).concat(Array(segments - inputValue.toString().length).fill(""))
+    );
+  }, [inputValue, segments]);
 
   const handleChange = (index, event) => {
     const newValues = [...values];
