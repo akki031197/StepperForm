@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { useState } from "react";
+import { Container } from "react-bootstrap";
 import { Stepper } from "react-form-stepper";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import Page3 from "./Page3";
+import Page4 from "./Page4";
 
 function Form() {
   const [step, setStep] = useState(1);
@@ -48,7 +49,14 @@ function Form() {
       case 3:
         return (
           <>
-            <Page3 />
+            <Page3 handleNext={handleNext} />
+          </>
+        );
+
+      case 4:
+        return (
+          <>
+            <Page4 />
           </>
         );
       default:
