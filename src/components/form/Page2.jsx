@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, Form, Row, Col, FormCheck, Button } from "react-bootstrap";
 import "./Page1.css";
 
-function Page2({ handleNext, handleData }) {
-  const handleChangeButton = () => {
+function Page2({ handleNext, handleBack, handleData, page2Data }) {
+  const [page2DataToSend, setPage2DataToSend] = useState(page2Data);
+  const [letterOfEngagements, setLetterOfEngagements] = useState(
+    page2Data.letterOfEngagements || []
+  );
+  useEffect(() => {
+    const accordionData = {
+      letterOfEngagements: letterOfEngagements,
+    };
+    setPage2DataToSend(accordionData);
+  }, [letterOfEngagements]);
+
+  const handlePreviousButton = () => {
+    handleBack();
+    handleData(page2DataToSend);
+  };
+
+  const handleNextButton = () => {
     handleNext();
-    //     handleData(page1DataToSend);
+    handleData(page2DataToSend);
+  };
+
+  const handleLetterOfEngagements = (label) => {
+    if (letterOfEngagements.includes(label)) {
+      setLetterOfEngagements(
+        letterOfEngagements.filter((item) => item !== label)
+      );
+    } else {
+      setLetterOfEngagements([...letterOfEngagements, label]);
+    }
   };
   return (
     <div>
@@ -32,8 +58,12 @@ function Page2({ handleNext, handleData }) {
                         id="inline-radio-1"
                         name="group1"
                         type="checkbox"
-                        value="Limited" // Store the selected option value
-                        // Set checked state based on selectedOption
+                        onChange={() =>
+                          handleLetterOfEngagements("Advisory Division")
+                        }
+                        checked={letterOfEngagements.includes(
+                          "Advisory Division"
+                        )}
                       >
                         <FormCheck.Input type="checkbox" />
                         <FormCheck.Label>
@@ -55,8 +85,12 @@ function Page2({ handleNext, handleData }) {
                         id="inline-radio-2"
                         name="group1"
                         type="checkbox"
-                        value="Moderate" // Store the selected option value
-                        // Set checked state based on selectedOption
+                        onChange={() =>
+                          handleLetterOfEngagements("Distribution Division")
+                        }
+                        checked={letterOfEngagements.includes(
+                          "Distribution Division"
+                        )}
                       >
                         <FormCheck.Input type="checkbox" />
                         <FormCheck.Label>
@@ -88,9 +122,12 @@ function Page2({ handleNext, handleData }) {
         </Accordion.Item>
       </Accordion>
 
-      <div className="text-center mt-4">
-        <Button variant="dark" onClick={handleChangeButton}>
-          Continue
+      <div className="d-flex justify-content-between mt-4">
+        <Button variant="dark" onClick={handlePreviousButton}>
+          Previous
+        </Button>
+        <Button variant="dark" onClick={handleNextButton}>
+          Next
         </Button>
       </div>
     </div>

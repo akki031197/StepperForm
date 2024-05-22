@@ -1,5 +1,33 @@
-import { Accordion, Form, Row, Col } from "react-bootstrap";
-function Page4() {
+import { useState, useEffect } from "react";
+import { Accordion, Form, Row, Col, Button } from "react-bootstrap";
+
+function Page4({ handleNext, handleBack, handleData, page4Data }) {
+  const [page4DataToSend, setPage4DataToSend] = useState(page4Data);
+  const [nameOfClient, setNameOfClient] = useState(
+    page4Data?.nameOfClient || ""
+  );
+  const [address, setAddress] = useState(page4Data?.address || "");
+
+  useEffect(() => {
+    const accordionData = {
+      nameOfClient: nameOfClient,
+      address: address,
+    };
+    setPage4DataToSend(accordionData);
+  }, [nameOfClient, address]);
+  const handlePreviousButton = () => {
+    handleBack();
+    handleData(page4DataToSend);
+  };
+
+  const handleNextButton = () => {
+    handleNext();
+    handleData(page4DataToSend);
+  };
+
+  const handleChangeNameOfClient = () => {};
+  const handleChangeAddress = () => {};
+
   return (
     <div>
       {" "}
@@ -41,7 +69,7 @@ function Page4() {
                     your complaint online with SEBI and subsequently view its
                     status.
                   </p>
-                  <p className="heading mb-">
+                  <p className="heading mb-3">
                     Thanking you <br />
                     Mimi Partha Sarathy <br />
                     Managing Director
@@ -59,14 +87,24 @@ function Page4() {
                 <Col md={4}>
                   <Form.Group controlId="inputCity" className="mb-0">
                     <Form.Label className="fw-bold">Name of Client</Form.Label>
-                    <Form.Control type="text" placeholder="Name of Client" />
+                    <Form.Control
+                      type="text"
+                      placeholder="Name of Client"
+                      value={nameOfClient}
+                      onChange={handleChangeNameOfClient}
+                    />
                   </Form.Group>
                 </Col>
 
                 <Col md={8}>
                   <Form.Group controlId="inputCity" className="mb-0">
                     <Form.Label className="fw-bold">Address</Form.Label>
-                    <Form.Control type="text" placeholder="Address" />
+                    <Form.Control
+                      type="text"
+                      placeholder="Address"
+                      value={address}
+                      onChange={handleChangeAddress}
+                    />
                   </Form.Group>
                 </Col>
               </Row>
@@ -74,6 +112,14 @@ function Page4() {
           </Accordion.Body>
         </Accordion.Item>{" "}
       </Accordion>
+      <div className="d-flex justify-content-between mt-4">
+        <Button variant="dark" onClick={handlePreviousButton}>
+          Previous
+        </Button>
+        <Button variant="dark" onClick={handleNextButton}>
+          Next
+        </Button>
+      </div>
     </div>
   );
 }

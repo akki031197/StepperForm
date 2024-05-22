@@ -41,7 +41,7 @@ function Page1({ handleNext, handleData, page1Data }) {
   );
   const [netWorth, setNetWorth] = useState(page1Data.netWorth || []);
   const [other, setOther] = useState(page1Data.other || []);
-  const [otherCity, setOtherCity] = useState(page1Data.otherCity || '')
+  const [otherCity, setOtherCity] = useState(page1Data.otherCity || "");
 
   const [age, setAge] = useState(page1Data.age || []);
   const [timeHorizonForFinancialPlan, settimeHorizonForFinancialPlan] =
@@ -87,22 +87,59 @@ function Page1({ handleNext, handleData, page1Data }) {
       requiredOutflowBegin: requiredOutflowBegin,
       investmentObjectives: investmentObjectives,
       abilityTotolarateRisk: abilityTotolarateRisk,
-      investmentExperience: investmentExperience
-    }
-    setPage1DataToSend(accordian_data)
-  }, [firstName, middleName, lastName, nationality, dob, city, selectedNamePrefix, accountNumber, employmentStatus, netWorth, investmentExperience,
-    age, timeHorizonForFinancialPlan, liquidNetWorth, timeHorizonForPortfolio, requiredOutflowBegin, investmentObjectives, abilityTotolarateRisk, other, otherCity
+      investmentExperience: investmentExperience,
+    };
+    setPage1DataToSend(accordian_data);
+  }, [
+    firstName,
+    middleName,
+    lastName,
+    nationality,
+    dob,
+    city,
+    selectedNamePrefix,
+    accountNumber,
+    employmentStatus,
+    netWorth,
+    investmentExperience,
+    age,
+    timeHorizonForFinancialPlan,
+    liquidNetWorth,
+    timeHorizonForPortfolio,
+    requiredOutflowBegin,
+    investmentObjectives,
+    abilityTotolarateRisk,
+    other,
+    otherCity,
   ]);
 
-  const handleSelectChangeNamePrefix = (event) => { setSelectedNamePrefix(event.target.value) }
-  const handleChangeFirstName = (event) => { setFirstName(event.target.value) };
-  const handleChangeMiddleName = (event) => { setMiddleName(event.target.value) };
-  const handleChangeLastName = (event) => { setLastName(event.target.value) };
-  const handleChangeNationality = (event) => { setNationality(event.target.value) }
-  const handleChangeCity = (event) => { setCity(event.target.value) }
-  const handleChangeDateOfBirth = (date) => { setDob(date) };
-  const handleAccountNumberChange = (accountNumber) => { setAccountNumber(accountNumber) };
-  const handleChangeotherCity = (event) => { setOtherCity(event.target.value) };
+  const handleSelectChangeNamePrefix = (event) => {
+    setSelectedNamePrefix(event.target.value);
+  };
+  const handleChangeFirstName = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handleChangeMiddleName = (event) => {
+    setMiddleName(event.target.value);
+  };
+  const handleChangeLastName = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleChangeNationality = (event) => {
+    setNationality(event.target.value);
+  };
+  const handleChangeCity = (event) => {
+    setCity(event.target.value);
+  };
+  const handleChangeDateOfBirth = (date) => {
+    setDob(date);
+  };
+  const handleAccountNumberChange = (accountNumber) => {
+    setAccountNumber(accountNumber);
+  };
+  const handleChangeotherCity = (event) => {
+    setOtherCity(event.target.value);
+  };
 
   const handleCheckboxChangeEmploymentStatus = (label) => {
     if (employmentStatus.includes(label)) {
@@ -120,7 +157,7 @@ function Page1({ handleNext, handleData, page1Data }) {
   };
   const handleCheckboxChangeOther = (label) => {
     if (other.includes(label)) {
-      setOther(other.filter(item => item !== label));
+      setOther(other.filter((item) => item !== label));
     } else {
       setOther([...other, label]);
     }
@@ -484,7 +521,9 @@ function Page1({ handleNext, handleData, page1Data }) {
                         <Form.Check
                           type="checkbox"
                           label="Other(pls.specify)"
-                          onChange={() => handleCheckboxChangeOther("Other(pls.specify)")}
+                          onChange={() =>
+                            handleCheckboxChangeOther("Other(pls.specify)")
+                          }
                           checked={other.includes("Other(pls.specify)")}
                         />
                       </Col>
@@ -1256,9 +1295,9 @@ function Page1({ handleNext, handleData, page1Data }) {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <div className="text-center mt-4">
+      <div className="mt-4 text-right">
         <Button variant="dark" onClick={handleChangeButton}>
-          Continue
+          Next
         </Button>
       </div>
     </>

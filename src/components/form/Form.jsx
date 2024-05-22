@@ -21,10 +21,24 @@ function Form() {
   };
 
   const [dataPage1, setDataPage1] = useState({});
+  const [dataPage2, setDataPage2] = useState({});
+  const [dataPage3, setDataPage3] = useState({});
+  const [dataPage4, setDataPage4] = useState({});
 
   const handleDataPage1 = (data) => {
     setDataPage1(data);
-    console.log("data", data);
+  };
+
+  const handleDataPage2 = (data) => {
+    setDataPage2(data);
+  };
+
+  const handleDataPage3 = (data) => {
+    setDataPage3(data);
+  };
+
+  const handleDataPage4 = (data) => {
+    setDataPage4(data);
   };
 
   const renderStepContent = (step) => {
@@ -43,20 +57,35 @@ function Form() {
       case 2:
         return (
           <>
-            <Page2 handleNext={handleNext} handleBack={handlePrev} />
+            <Page2
+              handleNext={handleNext}
+              handleBack={handlePrev}
+              handleData={handleDataPage2}
+              page2Data={dataPage2}
+            />
           </>
         );
       case 3:
         return (
           <>
-            <Page3 handleNext={handleNext} />
+            <Page3
+              handleNext={handleNext}
+              handleBack={handlePrev}
+              handleData={handleDataPage3}
+              page3Data={dataPage3}
+            />
           </>
         );
 
       case 4:
         return (
           <>
-            <Page4 />
+            <Page4
+              handleNext={handleNext}
+              handleBack={handlePrev}
+              handleData={handleDataPage4}
+              page4Data={dataPage4}
+            />
           </>
         );
       default:
@@ -75,10 +104,10 @@ function Form() {
         >
           <Stepper
             steps={[
-              { title: "Step 1" },
-              { title: "Step 2" },
-              { title: "Step 3" },
-              { title: "Step 4" },
+              { label: "Step 1" },
+              { label: "Step 2" },
+              { label: "Step 3" },
+              { label: "Step 4" },
             ]}
             activeStep={activeStep}
           />
