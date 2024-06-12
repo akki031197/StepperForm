@@ -99,6 +99,7 @@ function Form() {
           style={{
             boxShadow: " 0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
             padding: "2rem",
+            width: "90vw"
           }}
           className={step === 4 ? "background-image-calculate" : ""}
         >

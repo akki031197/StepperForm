@@ -45,3 +45,17 @@ td {
   line-height: 16px;
   text-align: left;
 }
+
+.border-0{
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.border-0::-webkit-scrollbar {
+  display: none; 
+}
+
+.border-0 {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}

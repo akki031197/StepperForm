@@ -58,14 +58,15 @@ function Page2({ handleNext, handleBack, handleData, page2Data }) {
                         id="inline-radio-1"
                         name="group1"
                         type="checkbox"
-                        onChange={() =>
-                          handleLetterOfEngagements("Advisory Division")
-                        }
-                        checked={letterOfEngagements.includes(
-                          "Advisory Division"
-                        )}
                       >
-                        <FormCheck.Input type="checkbox" />
+                        <FormCheck.Input type="checkbox" 
+                          onChange={() =>
+                            handleLetterOfEngagements("a")
+                          }
+                          checked={letterOfEngagements.includes(
+                            "a"
+                          )}
+                        />
                         <FormCheck.Label>
                           ONLY
                           <span className="fw-bold pl-1">
@@ -85,14 +86,15 @@ function Page2({ handleNext, handleBack, handleData, page2Data }) {
                         id="inline-radio-2"
                         name="group1"
                         type="checkbox"
-                        onChange={() =>
-                          handleLetterOfEngagements("Distribution Division")
-                        }
-                        checked={letterOfEngagements.includes(
-                          "Distribution Division"
-                        )}
                       >
-                        <FormCheck.Input type="checkbox" />
+                        <FormCheck.Input type="checkbox" 
+                          onChange={() =>
+                            handleLetterOfEngagements("b")
+                          }
+                          checked={letterOfEngagements.includes(
+                            "b"
+                          )}
+                        />
                         <FormCheck.Label>
                           ONLY
                           <span className="fw-bold pl-1">
