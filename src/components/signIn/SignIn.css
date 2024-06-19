@@ -1,98 +1,103 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Sign-in container */
 .container-body {
-  width: 510px;
-  max-height: 100%; /* Allow container to be scrollable if content overflows */
+  width: 510px; /* Set to 100% for responsiveness */
+  max-width: 510px; /* Optional: Set a maximum width for larger screens */
+  max-height: 100%;
   padding: 40px 30px 50px 30px;
   gap: 10px;
   border-radius: 30px;
   border: 1px solid rgba(215, 215, 215, 1);
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-  opacity: 1; /* Set to 1 to make the container visible */
-  position: relative; /* Changed from absolute to relative to keep the layout centered */
-  overflow-y: auto; /* Enable vertical scrolling */
+  opacity: 1;
+  position: relative;
+  overflow-y: auto;
   text-align: center;
 }
-.logo img {
-  background-size: cover;
-}
+
+/* Logo container */
 .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300px;
-  height: 105.72px;
+  height: 105.72px; /* Adjust height as needed for your logo */
   opacity: 1;
 }
 
+.logo-container img {
+  max-width: 100%; /* Allow logo to scale within container */
+  max-height: 100%;
+}
+
+/* Title */
 .title {
-  width: 317px;
-  height: 44px;
-  gap: 0px;
-  opacity: 0px;
   font-family: Nunito Sans;
-  font-size: 32px;
+  font-size: 1.8rem; /* Use rem for responsive font size */
   font-weight: 700;
-  line-height: 43.65px;
+  line-height: 1.5; /* Adjust line-height for better spacing */
   letter-spacing: -0.11428570002317429px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 20px;
 }
+
+/* Input group */
 .input-group {
-  width: 450px;
-  height: 95.82px;
-  gap: 0px;
-  opacity: 0px;
-  text-align: center;
-  padding: 20px 20px; /* Add padding to the left and right */
-  margin: 0 auto; /* Center the element horizontally */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Set to 100% for responsiveness */
+  gap: 10px;
+  padding: 7px;
+  margin: 0 auto;
 }
 
 .input-group label {
-  width: 342px;
-  height: 25px;
-  top: 217.72px;
-  gap: 0px;
-  opacity: 0.8px;
   font-family: Nunito Sans;
-  font-size: 18px;
+  font-size: 1rem; /* Use rem for responsive font size */
   font-weight: 600;
-  line-height: 24.55px;
+  line-height: 1.5;
   letter-spacing: -0.06428570300340652px;
   text-align: left;
 }
+
 .input-group input {
-  top: 257.54px;
-  gap: 0px;
-  opacity: 0px;
+  width: 100%;
+  padding: 15px;
   background: rgba(241, 244, 249, 1);
   border: 1px solid rgba(216, 216, 216, 1);
-  width: calc(100%);
-  padding: 15px;
   border-radius: 5px;
 }
+
+/* Checkbox group */
 .checkbox-group {
-  width: 273px;
-  height: 25px;
-  gap: 0px;
-  opacity: 0px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 4px;
 }
+
 .checkbox-group input {
   margin-right: 5px;
 }
 
 .checkbox-group label {
-  width: 237px;
-  height: 25px;
-  top: 477.27px;
-  left: 124.5px;
-  gap: 0px;
-  opacity: 0.8px;
   font-family: Nunito Sans;
-  font-size: 18px;
-  line-height: 24.55px;
+  font-size: 1rem; /* Use rem for responsive font size */
+  line-height: 1.5;
   letter-spacing: -0.06428570300340652px;
-  text-align: center;
+  text-align: left;
 }
-.btn {
+
+/* Button */
+.d-grid .btn {
+  /* Assuming you're using Bootstrap classes */
   background-color: #6f4aa6;
   color: white;
   padding: 10px 20px;

@@ -1,14 +1,16 @@
-import { Button, Navbar, Container } from "react-bootstrap";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from "./components/form/Form";
 import "./App.css";
 import SignIn from "./components/signIn/SignIn";
 
 function App() {
   return (
-    <div>
-      <SignIn />
-      {/* <Form /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/page" element={<Form />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

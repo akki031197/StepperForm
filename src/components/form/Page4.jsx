@@ -117,7 +117,7 @@ function Page4({ handleNext, handleBack, handleData, page4Data }) {
           Previous
         </Button>
         <Button variant="dark" onClick={handleNextButton}>
-          Next
+          Submit
         </Button>
       </div>
     </div>
