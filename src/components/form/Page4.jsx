@@ -21,7 +21,7 @@ function Page4({ handleNext, handleBack, handleData, page4Data }) {
   };
 
   const handleNextButton = () => {
-    handleNext();
+    handleNext('Submit');
     handleData(page4DataToSend);
   };
 
