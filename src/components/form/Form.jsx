@@ -49,17 +49,20 @@ function Form() {
       form4: dataPage4,
     };
     console.log(form_data);
-    try {
-      const response = await axios.post("/submission", form_data);
-      if (response.status === 200) {
-        // setMessage("Form data submitted successfully");
-        // Navigate to another page if needed
-        // navigate("/successPage");
+    if(activeStep === 4){
+      try {
+        const response = await axios.post("/submission", form_data);
+        if (response.status === 200) {
+          // setMessage("Form data submitted successfully");
+          // Navigate to another page if needed
+          // navigate("/successPage");
+        }
+      } catch (error) {
+        // setMessage("Failed to submit form data. Please try again.");
+        console.error("There was an error submitting the form data:", error);
       }
-    } catch (error) {
-      // setMessage("Failed to submit form data. Please try again.");
-      console.error("There was an error submitting the form data:", error);
     }
+   
   };
 
   const renderStepContent = (step) => {
