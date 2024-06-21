@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Accordion, Form, Row, Col, Button } from "react-bootstrap";
 
-function Page4({ handleNext, handleBack, handleData, page4Data }) {
+function Page4({ handleNext, handleBack, handleData, page4Data, showPreview }) {
   const [page4DataToSend, setPage4DataToSend] = useState(page4Data);
   const [nameOfClient, setNameOfClient] = useState(
     page4Data?.nameOfClient || ""
@@ -24,6 +24,10 @@ function Page4({ handleNext, handleBack, handleData, page4Data }) {
     handleNext('Submit');
     handleData(page4DataToSend);
   };
+
+  const handlePreview = () => {
+    showPreview()
+  }
 
   const handleChangeNameOfClient = () => {};
   const handleChangeAddress = () => {};
@@ -115,6 +119,9 @@ function Page4({ handleNext, handleBack, handleData, page4Data }) {
       <div className="d-flex justify-content-between mt-4">
         <Button variant="dark" onClick={handlePreviousButton}>
           Previous
+        </Button>
+        <Button variant="dark" onClick={handlePreview}>
+          Preview
         </Button>
         <Button variant="dark" onClick={handleNextButton}>
           Submit
