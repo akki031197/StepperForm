@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Row, Col } from 'react-bootstrap';
 import './preview.css'
 import Page1 from '../form/Page1';
 
@@ -121,6 +122,107 @@ function PreviewForm({ showPreview, hidePreview, dataPage1, dataPage2, dataPage3
                     <div>{dataPage1.investmentExperience.includes("a") ? <div><span className="fw-bold">Limited -</span> I have little or no knowledge of products outside traditional bank savings accounts or time-deposits.</div> : ""}</div>
                     <div>{dataPage1.investmentExperience.includes("b") ? <div><span className="fw-bold">Moderate -</span> I have general knowledge and understanding of investment products...</div> : ""}</div>
                     <div>{dataPage1.investmentExperience.includes("c") ? <div><span className="fw-bold">Extensive -</span> I have extensive knowledge...</div> : ""}</div>
+                </div>
+
+                <div className="section">
+                    <div className="preview-heading"> SUBJECT : LETTER OF ENGAGEMENT - ADVISORY OR DISTRIBUTION SERVICES</div>
+
+                    <b>I/we do hereby engage M/S Sinhasi Consultants Pvt Ltd for the following service.</b> :
+                    <div>{dataPage2.letterOfEngagements.includes("a") ? <div> ONLY
+                        <span className="fw-bold pl-1">
+                            SINHASI - ADVISORY DIVISION
+                        </span>{" "}
+                        for planning and advisory services across various
+                        asset classes and investments, holistic financial
+                        planning and insurance planning. </div> : ""}</div>
+                    <div>{dataPage2.letterOfEngagements.includes("b") ? <div>  ONLY
+                        <span className="fw-bold pl-1">
+                            SINHASI - DISTRIBUTION DIVISION
+                        </span>{" "}
+                        for distribution services for various investment
+                        products across various asset classes of health and
+                        general insurance, life insurance, investments in all
+                        mutual funds, shares and securities, PMS schemes,
+                        bonds, FDs, structured proucts, PPF, PO Schemes,
+                        Private Equity and Private Equity Funds , Real Estate
+                        Funds etc. and other investment products and services.</div> : ""}</div>
+
+                    <p className="footnote mt-2">
+                        A copy of the table of commissions / brokerages received
+                        by M/S Sinhasi Consultants Pvt Ltd for various products
+                        distributed has been received by me / us and the same is
+                        noted and accepted.
+                    </p>
+                </div>
+
+                <div className="section">
+                    <div className="preview-heading">SUBJECT: EMAIL ID & CONTACT DETAILS FOR SINHASI COMMUNICATIONS</div>
+
+                    <p className="heading  mb-3">
+                        I/ we do hereby declare that M/S Sinhasi Consultants Pvt Ltd
+                        can use the following Email ID & Contact details for all
+                        there communication regarding my Portfolio Updates &
+                        Financial Plan Updates & other Communications as and when
+                        required.
+                    </p>
+                    <div><b>Primary Email ID : </b>{dataPage3.primaryEmailId}</div>
+                    <div><b>Contact No : </b>{dataPage3.primaryContactNumber}</div>
+                    <div><b>Secondary Email ID/ IDs :</b> {dataPage3.secondaryEmailId}</div>
+                    <div><b>Contact No : </b>{dataPage3.secondaryContactNumber}</div>
+                    <div><b>1st holder name : </b>{dataPage3.firstHolderName}</div>
+                    <div><b>Address :</b> {dataPage3.address}</div>
+                </div>
+
+                <div className="section">
+                    <div className="preview-heading"> SUBJECT: COMPLAINT REDRESSAL SYSTEM AND PROCESS - DETAILS</div>
+
+                    <Row className="align-items-center mb-3">
+                        <p className="heading  mb-3">Dear Sir / Madam,</p>
+                        <Col>
+                            <p className="heading  mb-3">
+                                Below are the details of the Complaint Redressal System and
+                                Process for your reference:
+                            </p>
+                            <p className="heading  mb-3">
+                                The registered email id with SEBI and SCORES for all
+                                complaints is mimi@sinhasi.com.
+                            </p>
+                            <p className="heading  mb-3">
+                                1. For all complaints you would like to make on any issues
+                                please email mimi@sinhasi.com
+                            </p>
+                            <p className="heading mb-3">
+                                2. Complaints can be registered with Sebi online on the
+                                following site: http://scores.gov.in. SEBI Complaints
+                                Redressal System is called SCORES. It is recommended by Sebi
+                                in the event of such complaint you should first approach the
+                                concerned company/ intermediary against whom you have a
+                                complaint. However, if you may not be satisfied with their
+                                response, you should know whom you should turn to, to get
+                                your complaint redressed. SEBI takes up complaints related
+                                to issue and transfer of securities and non-payment of
+                                dividend with listed companies. In addition, SEBI also takes
+                                up complaints against the various intermediaries registered
+                                with it and related issues. SCORES facilitates you to lodge
+                                your complaint online with SEBI and subsequently view its
+                                status.
+                            </p>
+                            <p className="heading mb-3">
+                                Thanking you <br />
+                                Mimi Partha Sarathy <br />
+                                Managing Director
+                            </p>
+
+                            <p className="heading mb-3">
+                                <strong>Declaration from Client</strong>: I have read the
+                                above details carefully and understood all the details and
+                                content as mentioned. A copy of this letter has also been
+                                handed over to me
+                            </p>
+                        </Col>
+                    </Row>
+                    <div><b>Name of Client : </b>{dataPage4.nameOfClient}</div>
+                    <div><b>Address: </b>{dataPage4.address}</div>
                 </div>
 
 
